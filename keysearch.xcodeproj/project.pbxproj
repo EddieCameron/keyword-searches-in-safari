@@ -20,7 +20,6 @@
 		2CDF21F824DC579A00E12C23 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF21F724DC579A00E12C23 /* SafariExtensionHandler.swift */; };
 		2CDF21FA24DC579A00E12C23 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF21F924DC579A00E12C23 /* SafariExtensionViewController.swift */; };
 		2CDF21FD24DC579A00E12C23 /* SafariExtensionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF21FB24DC579A00E12C23 /* SafariExtensionViewController.xib */; };
-		2CDF220224DC579A00E12C23 /* ToolbarItemIcon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF220124DC579A00E12C23 /* ToolbarItemIcon.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +63,6 @@
 		2CDF21F924DC579A00E12C23 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		2CDF21FC24DC579A00E12C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		2CDF21FE24DC579A00E12C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CDF220124DC579A00E12C23 /* ToolbarItemIcon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = ToolbarItemIcon.pdf; sourceTree = "<group>"; };
 		2CDF220324DC579A00E12C23 /* keyword_search_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = keyword_search_Extension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -137,7 +135,6 @@
 				2C2B279824DC73F100AA7B2D /* KeywordEntry.swift */,
 				2C21F95A24DC7EEC0002A52D /* KeywordDB.swift */,
 				2CDF21FE24DC579A00E12C23 /* Info.plist */,
-				2CDF220124DC579A00E12C23 /* ToolbarItemIcon.pdf */,
 				2CDF220324DC579A00E12C23 /* keyword_search_Extension.entitlements */,
 			);
 			path = "keyword-search Extension";
@@ -235,7 +232,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2C21F95D24DD00C90002A52D /* ToolbarItemIcon.png in Resources */,
-				2CDF220224DC579A00E12C23 /* ToolbarItemIcon.pdf in Resources */,
 				2CDF21FD24DC579A00E12C23 /* SafariExtensionViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,6 +343,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = KeySearch;
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -400,6 +397,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = KeySearch;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -419,7 +417,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eddiecameron.keyword-search-Extension";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eddiecameron.keyword-search.extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -439,7 +438,8 @@
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eddiecameron.keyword-search-Extension";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.eddiecameron.keyword-search.extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;

@@ -12,22 +12,39 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     
     let keywords: [KeywordEntry] = []
     
-    override func messageReceived(withName messageName: String, from page: SFSafariPage, userInfo: [String : Any]?) {
-        // This method will be called when a content script provided by your extension calls safari.extension.dispatchMessage("message").
-        page.getPropertiesWithCompletionHandler { properties in
-            NSLog("The extension received a message (\(messageName)) from a script injected into (\(String(describing: properties?.url))) with userInfo (\(userInfo ?? [:]))")
-        }
-    }
+    static var currentTargetUrl: URL?
     
     override func popoverViewController() -> SFSafariExtensionViewController {
         return SafariExtensionViewController.shared
     }
     
     override func page(_ page: SFSafariPage, willNavigateTo url: URL?) {
-        NSLog("PAGE: " + ( url?.absoluteString ?? "NONE" ) )
-        let isGoogle = url?.host?.range(of: "google") != nil
-        if isGoogle {
-            let query = (url?.queryParameters?["q"] ?? "")
+        SafariExtensionHandler.currentTargetUrl = url
+        
+        var isSearch = false
+        var query = ""
+        if url?.host?.range(of: "google.com/search") != nil {
+            // google
+            isSearch = true
+            query = (url?.queryParameters?["q"] ?? "")
+        }
+        else if url?.host?.range(of: "duckduckgo.com") != nil {
+            // duckduckgo
+            isSearch = true
+            query = (url?.queryParameters?["q"] ?? "")
+        }
+        else if url?.host?.range(of: "bing.com/search") != nil {
+            // bing
+            isSearch = true
+            query = (url?.queryParameters?["q"] ?? "")
+        }
+        else if url?.host?.range(of: "search.yahoo.com/search") != nil {
+            // bing
+            isSearch = true
+            query = (url?.queryParameters?["p"] ?? "")
+        }
+        
+        if isSearch {
             for keyword in KeywordDB.shared.keywords {
                 let queryStart = keyword.keyword + "+"
                 if query.starts(with: queryStart) {
@@ -35,7 +52,6 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                     let cleanQuery = query.dropFirst(queryStart.count)
                     if let searchUrl = URL( string: keyword.url.replacingOccurrences(of: "{search}", with: cleanQuery)) {
                         NSLog("Found keyword: " + keyword.keyword + ". Searching: " + searchUrl.absoluteString )
-    //                    page.dispatchMessageToScript(withName: "goto", userInfo: ["search": searchUrl])
                         page.getContainingTab{ tab in
                             tab.navigate(to: searchUrl)
                         }
@@ -60,5 +76,24 @@ extension URL {
         }
 
         return parameters
+    }
+    
+    public func tryGetSearchQuery() -> String? {
+        guard let params = self.queryParameters else {
+            return nil
+        }
+        
+        if let qParam = params["q"] {
+            return qParam
+        }
+        if let searchParam = params["search"] {
+            return searchParam
+        }
+        if let qParam = params["p"] {
+            return qParam
+        }
+        
+        // don't know how to get search query from URL
+        return nil
     }
 }

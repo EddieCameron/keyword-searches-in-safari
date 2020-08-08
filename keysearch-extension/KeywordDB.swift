@@ -17,26 +17,28 @@ class KeywordDB {
     
     init() {
         UserDefaults.standard.synchronize()
-        keywords = []
-        guard let serializedKeywords:[Data] = UserDefaults.standard.array(forKey: KeywordDB.DEFAULTS_KEY) as? [Data] else {
-            return
-        }
         
-        if serializedKeywords.count > 0 {
-            for keywordString in serializedKeywords {
-                do {
-                    let keyword = try JSONDecoder().decode(KeywordEntry.self, from: keywordString)
-                    keywords.append(keyword)
+        keywords = []
+        if let serializedKeywords:[Data] = UserDefaults.standard.array(forKey: KeywordDB.DEFAULTS_KEY) as? [Data] {
+            if serializedKeywords.count > 0 {
+                for keywordString in serializedKeywords {
+                    do {
+                        let keyword = try JSONDecoder().decode(KeywordEntry.self, from: keywordString)
+                        keywords.append(keyword)
+                    }
+                    catch {
+                        NSLog("Error loading saved keyword data")
+                    }
                 }
-                catch {
-                    NSLog("Error loading saved keyword data")
-                }
+                return
             }
         }
-        else {
-            // load defaults
-            keywords.append(KeywordEntry(keyword: "w", url: "https://en.wikipedia.org/w/index.php?search={search}"))
-        }
+        
+        // load defaults
+        keywords.append(KeywordEntry(keyword: "w", url: "https://en.wikipedia.org/w/index.php?search={search}"))
+        keywords.append(KeywordEntry(keyword: "g", url: "https://www.google.com/search?q={search}"))
+        keywords.append(KeywordEntry(keyword: "d", url: "https://www.duckduckgo.com/?q={search}"))
+
     }
     
     func persist() {

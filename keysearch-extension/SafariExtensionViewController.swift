@@ -76,8 +76,17 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
         if sender.selectedSegment == 0 {
             // add
             let insertionIdx = KeywordDB.shared.keywords.count
-            KeywordDB.shared.add(keyword: "kw", url: "http://url.com?q={search}")
+            
+            var prefillUrl = "http://url.com?q={search}"
+            if let currentUrl = SafariExtensionHandler.currentTargetUrl {
+                if let searchQuery = currentUrl.tryGetSearchQuery() {
+                    prefillUrl = currentUrl.absoluteString.replacingOccurrences(of: searchQuery, with: "{search}")
+                }
+            }
+    
+            KeywordDB.shared.add(keyword: "kw", url: prefillUrl)
             tableView.insertRows(at: IndexSet(integer:insertionIdx), withAnimation: .effectGap)
+            tableView.editColumn(0, row: insertionIdx, with: nil, select: false)    // preselect keyword field for editing
         }
         else {
             // remove
