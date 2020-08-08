@@ -1,4 +1,4 @@
-# Safari Keyword Search
+# Keyword Searches In Safari
 -----------------------
 
 #### It does that, but in Safari 13+, ala [Omnikey](http://marioestrada.github.io/safari-omnikey/) or the original [Safari keyword search](http://safarikeywordsearch.aurlien.net)
