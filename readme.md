@@ -4,10 +4,10 @@
 
 #### It does it, but in Safari 13+, ala [Omnikey](http://marioestrada.github.io/safari-omnikey/) or the original [Safari keyword search](http://safarikeywordsearch.aurlien.net)
 
-🔍 quickly search anywhere from the address bar. e.g: type `w laika` to search Wikipedia
-📝 customize your keyword searches via the toolbar icon
-🥡 comes with a couple common searches already enabled: wikipedia(w), duckduckgo(d), google(g)
-🧊 does this and nothing else
+- 🔍 quickly search anywhere from the address bar. e.g: type `w laika` to search Wikipedia
+- 📝 customize your keyword searches via the toolbar icon
+- 🥡 comes with a couple common searches already enabled: wikipedia(w), duckduckgo(d), google(g)
+- 🧊 does this and nothing else
 
 ## Caveats!
 This uses a pretty hacky workaround to get around Safari's lack of search bar callbacks. It intercepts any address bar search page loading, extracts the search query, and if a keyword is found it will redirect you. I would like to fix these issues some day.
