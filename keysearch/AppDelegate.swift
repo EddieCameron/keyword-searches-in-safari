@@ -19,4 +19,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
     
+    func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
+        return true
+    }
+        
+    @IBAction func openSupportSite(_ sender: Any) {
+        let url = URL(string: "https://github.com/EddieCameron/keyword-searches-in-safari")!
+        if NSWorkspace.shared.open(url) {
+            print("Help page opened" )
+        }
+    }
 }

@@ -20,26 +20,32 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     
     override func page(_ page: SFSafariPage, willNavigateTo url: URL?) {
         SafariExtensionHandler.currentTargetUrl = url
+        NSLog( url?.absoluteString ?? "")
         
         var isSearch = false
         var query = ""
-        if url?.host?.range(of: "google.com/search") != nil {
-            // google
+        if let isGoogle = url?.host?.contains("google"),
+            let isSearchPath = url?.path.starts(with: "/search" ),
+            isGoogle, isSearchPath {
             isSearch = true
             query = (url?.queryParameters?["q"] ?? "")
         }
-        else if url?.host?.range(of: "duckduckgo.com") != nil {
+        else if let isDuckDuckGo = url?.host?.contains("duckduckgo.com"), isDuckDuckGo {
             // duckduckgo
             isSearch = true
             query = (url?.queryParameters?["q"] ?? "")
         }
-        else if url?.host?.range(of: "bing.com/search") != nil {
+        else if let isBing = url?.host?.contains("bing"),
+            let isSearchPath = url?.path.starts(with: "/search" ),
+            isBing, isSearchPath {
             // bing
             isSearch = true
             query = (url?.queryParameters?["q"] ?? "")
         }
-        else if url?.host?.range(of: "search.yahoo.com/search") != nil {
-            // bing
+        else if let isYahoo = url?.host?.contains("search.yahoo.com"),
+            let isSearchPath = url?.path.starts(with: "/search" ),
+            isYahoo, isSearchPath {
+            // yahoo
             isSearch = true
             query = (url?.queryParameters?["p"] ?? "")
         }

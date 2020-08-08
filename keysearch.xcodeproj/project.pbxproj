@@ -10,12 +10,12 @@
 		2C21F95B24DC7EEC0002A52D /* KeywordDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C21F95A24DC7EEC0002A52D /* KeywordDB.swift */; };
 		2C21F95D24DD00C90002A52D /* ToolbarItemIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C21F95C24DD00C90002A52D /* ToolbarItemIcon.png */; };
 		2C2B279924DC73F100AA7B2D /* KeywordEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C2B279824DC73F100AA7B2D /* KeywordEntry.swift */; };
-		2CDF21E024DC579900E12C23 /* keyword_search.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF21DF24DC579900E12C23 /* keyword_search.entitlements */; };
+		2CDF21E024DC579900E12C23 /* keysearch.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF21DF24DC579900E12C23 /* keysearch.entitlements */; };
 		2CDF21E224DC579900E12C23 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF21E124DC579900E12C23 /* AppDelegate.swift */; };
 		2CDF21E524DC579900E12C23 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF21E324DC579900E12C23 /* Main.storyboard */; };
 		2CDF21E724DC579900E12C23 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF21E624DC579900E12C23 /* ViewController.swift */; };
 		2CDF21E924DC579A00E12C23 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CDF21E824DC579A00E12C23 /* Assets.xcassets */; };
-		2CDF21F024DC579A00E12C23 /* keyword-search Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2CDF21EF24DC579A00E12C23 /* keyword-search Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		2CDF21F024DC579A00E12C23 /* Search Key Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 2CDF21EF24DC579A00E12C23 /* Search Key Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2CDF21F524DC579A00E12C23 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CDF21F424DC579A00E12C23 /* Cocoa.framework */; };
 		2CDF21F824DC579A00E12C23 /* SafariExtensionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF21F724DC579A00E12C23 /* SafariExtensionHandler.swift */; };
 		2CDF21FA24DC579A00E12C23 /* SafariExtensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CDF21F924DC579A00E12C23 /* SafariExtensionViewController.swift */; };
@@ -39,7 +39,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				2CDF21F024DC579A00E12C23 /* keyword-search Extension.appex in Embed App Extensions */,
+				2CDF21F024DC579A00E12C23 /* Search Key Extension.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -50,20 +50,20 @@
 		2C21F95A24DC7EEC0002A52D /* KeywordDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordDB.swift; sourceTree = "<group>"; };
 		2C21F95C24DD00C90002A52D /* ToolbarItemIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ToolbarItemIcon.png; sourceTree = "<group>"; };
 		2C2B279824DC73F100AA7B2D /* KeywordEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeywordEntry.swift; sourceTree = "<group>"; };
-		2CDF21DC24DC579900E12C23 /* keyword-search.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "keyword-search.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CDF21DF24DC579900E12C23 /* keyword_search.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = keyword_search.entitlements; sourceTree = "<group>"; };
+		2CDF21DC24DC579900E12C23 /* Search Key.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Search Key.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CDF21DF24DC579900E12C23 /* keysearch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = keysearch.entitlements; sourceTree = "<group>"; };
 		2CDF21E124DC579900E12C23 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CDF21E424DC579900E12C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CDF21E624DC579900E12C23 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2CDF21E824DC579A00E12C23 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CDF21EA24DC579A00E12C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CDF21EF24DC579A00E12C23 /* keyword-search Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "keyword-search Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CDF21EF24DC579A00E12C23 /* Search Key Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Search Key Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CDF21F424DC579A00E12C23 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2CDF21F724DC579A00E12C23 /* SafariExtensionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionHandler.swift; sourceTree = "<group>"; };
 		2CDF21F924DC579A00E12C23 /* SafariExtensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariExtensionViewController.swift; sourceTree = "<group>"; };
 		2CDF21FC24DC579A00E12C23 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SafariExtensionViewController.xib; sourceTree = "<group>"; };
 		2CDF21FE24DC579A00E12C23 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CDF220324DC579A00E12C23 /* keyword_search_Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = keyword_search_Extension.entitlements; sourceTree = "<group>"; };
+		2CDF220324DC579A00E12C23 /* keysearch-extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "keysearch-extension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +88,8 @@
 		2CDF21D324DC579900E12C23 = {
 			isa = PBXGroup;
 			children = (
-				2CDF21DE24DC579900E12C23 /* keyword-search */,
-				2CDF21F624DC579A00E12C23 /* keyword-search Extension */,
+				2CDF21DE24DC579900E12C23 /* keysearch */,
+				2CDF21F624DC579A00E12C23 /* keysearch-extension */,
 				2CDF21F324DC579A00E12C23 /* Frameworks */,
 				2CDF21DD24DC579900E12C23 /* Products */,
 			);
@@ -98,23 +98,23 @@
 		2CDF21DD24DC579900E12C23 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CDF21DC24DC579900E12C23 /* keyword-search.app */,
-				2CDF21EF24DC579A00E12C23 /* keyword-search Extension.appex */,
+				2CDF21DC24DC579900E12C23 /* Search Key.app */,
+				2CDF21EF24DC579A00E12C23 /* Search Key Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2CDF21DE24DC579900E12C23 /* keyword-search */ = {
+		2CDF21DE24DC579900E12C23 /* keysearch */ = {
 			isa = PBXGroup;
 			children = (
-				2CDF21DF24DC579900E12C23 /* keyword_search.entitlements */,
+				2CDF21DF24DC579900E12C23 /* keysearch.entitlements */,
 				2CDF21E124DC579900E12C23 /* AppDelegate.swift */,
 				2CDF21E324DC579900E12C23 /* Main.storyboard */,
 				2CDF21E624DC579900E12C23 /* ViewController.swift */,
 				2CDF21E824DC579A00E12C23 /* Assets.xcassets */,
 				2CDF21EA24DC579A00E12C23 /* Info.plist */,
 			);
-			path = "keyword-search";
+			path = keysearch;
 			sourceTree = "<group>";
 		};
 		2CDF21F324DC579A00E12C23 /* Frameworks */ = {
@@ -125,7 +125,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		2CDF21F624DC579A00E12C23 /* keyword-search Extension */ = {
+		2CDF21F624DC579A00E12C23 /* keysearch-extension */ = {
 			isa = PBXGroup;
 			children = (
 				2C21F95C24DD00C90002A52D /* ToolbarItemIcon.png */,
@@ -135,17 +135,17 @@
 				2C2B279824DC73F100AA7B2D /* KeywordEntry.swift */,
 				2C21F95A24DC7EEC0002A52D /* KeywordDB.swift */,
 				2CDF21FE24DC579A00E12C23 /* Info.plist */,
-				2CDF220324DC579A00E12C23 /* keyword_search_Extension.entitlements */,
+				2CDF220324DC579A00E12C23 /* keysearch-extension.entitlements */,
 			);
-			path = "keyword-search Extension";
+			path = "keysearch-extension";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2CDF21DB24DC579900E12C23 /* keyword-search */ = {
+		2CDF21DB24DC579900E12C23 /* Search Key */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CDF220A24DC579A00E12C23 /* Build configuration list for PBXNativeTarget "keyword-search" */;
+			buildConfigurationList = 2CDF220A24DC579A00E12C23 /* Build configuration list for PBXNativeTarget "Search Key" */;
 			buildPhases = (
 				2CDF21D824DC579900E12C23 /* Sources */,
 				2CDF21D924DC579900E12C23 /* Frameworks */,
@@ -157,14 +157,14 @@
 			dependencies = (
 				2CDF21F224DC579A00E12C23 /* PBXTargetDependency */,
 			);
-			name = "keyword-search";
+			name = "Search Key";
 			productName = "keyword-search";
-			productReference = 2CDF21DC24DC579900E12C23 /* keyword-search.app */;
+			productReference = 2CDF21DC24DC579900E12C23 /* Search Key.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2CDF21EE24DC579A00E12C23 /* keyword-search Extension */ = {
+		2CDF21EE24DC579A00E12C23 /* Search Key Extension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CDF220624DC579A00E12C23 /* Build configuration list for PBXNativeTarget "keyword-search Extension" */;
+			buildConfigurationList = 2CDF220624DC579A00E12C23 /* Build configuration list for PBXNativeTarget "Search Key Extension" */;
 			buildPhases = (
 				2CDF21EB24DC579A00E12C23 /* Sources */,
 				2CDF21EC24DC579A00E12C23 /* Frameworks */,
@@ -174,9 +174,9 @@
 			);
 			dependencies = (
 			);
-			name = "keyword-search Extension";
+			name = "Search Key Extension";
 			productName = "keyword-search Extension";
-			productReference = 2CDF21EF24DC579A00E12C23 /* keyword-search Extension.appex */;
+			productReference = 2CDF21EF24DC579A00E12C23 /* Search Key Extension.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -197,7 +197,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2CDF21D724DC579900E12C23 /* Build configuration list for PBXProject "keyword-search" */;
+			buildConfigurationList = 2CDF21D724DC579900E12C23 /* Build configuration list for PBXProject "keysearch" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -210,8 +210,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2CDF21DB24DC579900E12C23 /* keyword-search */,
-				2CDF21EE24DC579A00E12C23 /* keyword-search Extension */,
+				2CDF21DB24DC579900E12C23 /* Search Key */,
+				2CDF21EE24DC579A00E12C23 /* Search Key Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -221,7 +221,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CDF21E024DC579900E12C23 /* keyword_search.entitlements in Resources */,
+				2CDF21E024DC579900E12C23 /* keysearch.entitlements in Resources */,
 				2CDF21E924DC579A00E12C23 /* Assets.xcassets in Resources */,
 				2CDF21E524DC579900E12C23 /* Main.storyboard in Resources */,
 			);
@@ -264,7 +264,7 @@
 /* Begin PBXTargetDependency section */
 		2CDF21F224DC579A00E12C23 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2CDF21EE24DC579A00E12C23 /* keyword-search Extension */;
+			target = 2CDF21EE24DC579A00E12C23 /* Search Key Extension */;
 			targetProxy = 2CDF21F124DC579A00E12C23 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -343,7 +343,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_NAME = KeySearch;
+				PRODUCT_NAME = "Search Key";
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -397,7 +397,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
-				PRODUCT_NAME = KeySearch;
+				PRODUCT_NAME = "Search Key";
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -407,18 +407,20 @@
 		2CDF220724DC579A00E12C23 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "keyword-search Extension/keyword_search_Extension.entitlements";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "keysearch-extension/keysearch-extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 42C5ZZJQK5;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "keyword-search Extension/Info.plist";
+				INFOPLIST_FILE = "keysearch-extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eddiecameron.keyword-search.extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eddiecameron.keysearch.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -428,18 +430,20 @@
 		2CDF220824DC579A00E12C23 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = "keyword-search Extension/keyword_search_Extension.entitlements";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "keysearch-extension/keysearch-extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 42C5ZZJQK5;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "keyword-search Extension/Info.plist";
+				INFOPLIST_FILE = "keysearch-extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 					"@executable_path/../../../../Frameworks",
 				);
 				MARKETING_VERSION = 1.1;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eddiecameron.keyword-search.extension";
+				PRODUCT_BUNDLE_IDENTIFIER = com.eddiecameron.keysearch.extension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
@@ -451,17 +455,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "keyword-search/keyword_search.entitlements";
+				CODE_SIGN_ENTITLEMENTS = keysearch/keysearch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 42C5ZZJQK5;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "keyword-search/Info.plist";
+				INFOPLIST_FILE = keysearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eddiecameron.keyword-search";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eddiecameron.keysearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -472,17 +478,19 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "keyword-search/keyword_search.entitlements";
+				CODE_SIGN_ENTITLEMENTS = keysearch/keysearch.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 42C5ZZJQK5;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "keyword-search/Info.plist";
+				INFOPLIST_FILE = keysearch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.eddiecameron.keyword-search";
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.eddiecameron.keysearch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 			};
@@ -491,7 +499,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CDF21D724DC579900E12C23 /* Build configuration list for PBXProject "keyword-search" */ = {
+		2CDF21D724DC579900E12C23 /* Build configuration list for PBXProject "keysearch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CDF220424DC579A00E12C23 /* Debug */,
@@ -500,7 +508,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CDF220624DC579A00E12C23 /* Build configuration list for PBXNativeTarget "keyword-search Extension" */ = {
+		2CDF220624DC579A00E12C23 /* Build configuration list for PBXNativeTarget "Search Key Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CDF220724DC579A00E12C23 /* Debug */,
@@ -509,7 +517,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CDF220A24DC579A00E12C23 /* Build configuration list for PBXNativeTarget "keyword-search" */ = {
+		2CDF220A24DC579A00E12C23 /* Build configuration list for PBXNativeTarget "Search Key" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CDF220B24DC579A00E12C23 /* Debug */,
