@@ -20,34 +20,38 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
     
     override func page(_ page: SFSafariPage, willNavigateTo url: URL?) {
         SafariExtensionHandler.currentTargetUrl = url
-        NSLog( url?.absoluteString ?? "")
+        
+        guard let realUrl = url else {
+            return
+        }
         
         var isSearch = false
         var query = ""
-        if let isGoogle = url?.host?.contains("google"),
-            let isSearchPath = url?.path.starts(with: "/search" ),
-            isGoogle, isSearchPath {
+        if let isGoogle = realUrl.host?.contains("google"),
+            realUrl.path.starts(with: "/search" ),
+            isGoogle {
             isSearch = true
-            query = (url?.queryParameters?["q"] ?? "")
+            query = (realUrl.queryParameters?["q"] ?? "")
         }
-        else if let isDuckDuckGo = url?.host?.contains("duckduckgo.com"), isDuckDuckGo {
+        else if let isDuckDuckGo = realUrl.host?.contains("duckduckgo.com"),
+            isDuckDuckGo {
             // duckduckgo
             isSearch = true
-            query = (url?.queryParameters?["q"] ?? "")
+            query = (realUrl.queryParameters?["q"] ?? "")
         }
-        else if let isBing = url?.host?.contains("bing"),
-            let isSearchPath = url?.path.starts(with: "/search" ),
-            isBing, isSearchPath {
+        else if let isBing = realUrl.host?.contains("bing"),
+            realUrl.path.starts(with: "/search" ),
+            isBing {
             // bing
             isSearch = true
-            query = (url?.queryParameters?["q"] ?? "")
+            query = (realUrl.queryParameters?["q"] ?? "")
         }
-        else if let isYahoo = url?.host?.contains("search.yahoo.com"),
-            let isSearchPath = url?.path.starts(with: "/search" ),
-            isYahoo, isSearchPath {
+        else if let isYahoo = realUrl.host?.contains("search.yahoo.com"),
+            realUrl.path.starts(with: "/search" ),
+            isYahoo {
             // yahoo
             isSearch = true
-            query = (url?.queryParameters?["p"] ?? "")
+            query = (realUrl.queryParameters?["p"] ?? "")
         }
         
         if isSearch {
@@ -56,8 +60,8 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                 if query.starts(with: queryStart) {
                     // matched a keyword
                     let cleanQuery = query.dropFirst(queryStart.count)
-                    if let searchUrl = URL( string: keyword.url.replacingOccurrences(of: "{search}", with: cleanQuery)) {
-                        NSLog("Found keyword: " + keyword.keyword + ". Searching: " + searchUrl.absoluteString )
+                    let replacedUrlString = keyword.url.replacingOccurrences(of: "{search}", with: cleanQuery)
+                    if let urlEncoded = replacedUrlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let searchUrl = URL( string: urlEncoded ) {
                         page.getContainingTab{ tab in
                             tab.navigate(to: searchUrl)
                         }

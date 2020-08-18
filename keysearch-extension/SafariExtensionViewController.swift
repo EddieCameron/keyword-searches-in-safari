@@ -37,6 +37,12 @@ class SafariExtensionViewController: SFSafariExtensionViewController {
                 sender.stringValue = KeywordDB.shared.keywords[row].keyword
                 return
             }
+                
+            // ignore !
+            if sender.stringValue.starts(with: "!") {
+                sender.stringValue = KeywordDB.shared.keywords[row].keyword
+                return
+            }
             
             // ignore duplicates
             for keyword in KeywordDB.shared.keywords {
@@ -126,13 +132,10 @@ extension SafariExtensionViewController: NSTableViewDelegate {
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         
         let keyword = KeywordDB.shared.keywords[row]
-        NSLog("Showing row " + keyword.keyword)
-        NSLog( tableColumn?.identifier.rawValue ?? " no column" )
 
         if tableColumn?.identifier == NSUserInterfaceItemIdentifier(ColumnIdentifiers.Keyword) {
             // keyword
             if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: CellIdentifiers.KeywordCell), owner: nil) as? NSTableCellView {
-                NSLog("column 0 " + keyword.keyword)
                 cell.textField?.stringValue = keyword.keyword
                 
                 cell.textField?.target = self
