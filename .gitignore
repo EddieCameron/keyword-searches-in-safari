@@ -26,3 +26,4 @@ DerivedData/
 /*.gcno
 keysearch.xcodeproj/project.xcworkspace
 report.xml
+.env

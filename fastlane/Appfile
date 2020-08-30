@@ -2,7 +2,6 @@ app_identifier "com.eddiecameron.keysearch" # The bundle identifier of your app
 apple_id "eddiec@grapefruitgames.com" # Your Apple email address
 team_name "Edward Farmer"
 team_id "42C5ZZJQK5"
-asc_provider "EddieCameron1222076693"
 
 
 # For more information about the Appfile, see:

@@ -16,7 +16,6 @@
 default_platform(:mac)
 
 BUILD_DIR = "builds"
-EXPORT_DIR = "Releases"
 
 def archive_path
   "#{BUILD_DIR}/keysearch.archive"
@@ -27,11 +26,11 @@ def app_id
 end
 
 def app_path
-  "#{EXPORT_DIR}/Search Key.app"
+  "#{BUILD_DIR}/Search Key.app"
 end
 
 def zip_path
-  "#{EXPORT_DIR}/Search Key.zip"
+  "#{BUILD_DIR}/Search Key.zip"
 end
 
 def version_number
@@ -51,7 +50,7 @@ platform :mac do
     xcarchive(
       export_archive: true,
       archive_path: archive_path,
-      export_path: EXPORT_DIR,
+      export_path: BUILD_DIR,
       export_options_plist: {
         destination: 'export',
         method: 'developer-id',
@@ -66,7 +65,7 @@ platform :mac do
       package: app_path,
       print_log: "true",
       bundle_id: app_id,
-      asc_provider: CredentialsManager::AppfileConfig.try_fetch_value(:asc_provider)
+      asc_provider: ENV['ASC_PROVIDER']
     )
   end
 
@@ -93,10 +92,19 @@ platform :mac do
     commit_version_bump(message: "#{version_number}")
   end
 
-  desc "Upload"
-  lane :upload do
-    build_mac_app(scheme: "keysearch",
-      output_directory: "Releases"
+  lane :release do
+    ensure_git_status_clean
+    bump_version
+    build
+    push_to_git_remote
+    set_github_release(
+      repository_name: 'eddiecameron/keyword-searches-in-safari',
+      api_token: ENV['GITHUB_TOKEN'],
+      name: "#{version_number}",
+      tag_name: "v#{version_number}",
+      description: "Version #{version_number}",
+      commitish: last_git_commit,
+      upload_assets: [zip_path]
     )
   end
 end
