@@ -15,7 +15,12 @@
 
 default_platform(:mac)
 
+BUILD_DIR = "builds"
 EXPORT_DIR = "Releases"
+
+def archive_path
+  "#{BUILD_DIR}/keysearch.archive"
+end
 
 def app_id
   CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
@@ -36,12 +41,16 @@ end
 platform :mac do
 
   lane :archive do
-    xcbuild(archive: true, scheme: 'keysearch')
+    xcbuild(
+      archive: true,
+      archive_path: archive_path,
+      scheme: 'keysearch')
   end
 
   lane :export_archive do
     xcarchive(
       export_archive: true,
+      archive_path: archive_path,
       export_path: EXPORT_DIR,
       export_options_plist: {
         destination: 'export',

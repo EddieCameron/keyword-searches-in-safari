@@ -25,3 +25,4 @@ DerivedData/
 ## Gcc Patch
 /*.gcno
 keysearch.xcodeproj/project.xcworkspace
+report.xml
