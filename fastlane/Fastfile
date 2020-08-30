@@ -92,19 +92,28 @@ platform :mac do
     commit_version_bump(message: "#{version_number}")
   end
 
-  lane :release do
-    ensure_git_status_clean
-    bump_version
-    build
-    push_to_git_remote
+  lane :creategithubrelease do
     set_github_release(
       repository_name: 'eddiecameron/keyword-searches-in-safari',
       api_token: ENV['GITHUB_TOKEN'],
       name: "#{version_number}",
       tag_name: "v#{version_number}",
       description: "Version #{version_number}",
-      commitish: last_git_commit,
       upload_assets: [zip_path]
     )
+  end
+
+  lane :uploadtoappstore do
+    upload_to_app_store(
+
+    )
+  end
+
+  lane :release do
+    ensure_git_status_clean
+    bump_version
+    build
+    push_to_git_remote
+    creategithubrelease
   end
 end

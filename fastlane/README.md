@@ -46,6 +46,16 @@ Build
 fastlane mac bump_version
 ```
 
+### mac creategithubrelease
+```
+fastlane mac creategithubrelease
+```
+
+### mac uploadtoappstore
+```
+fastlane mac uploadtoappstore
+```
+
 ### mac release
 ```
 fastlane mac release
