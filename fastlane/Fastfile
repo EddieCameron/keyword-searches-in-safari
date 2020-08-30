@@ -13,11 +13,81 @@
 # Uncomment the line if you want fastlane to automatically update itself
 # update_fastlane
 
-default_platform(:ios)
+default_platform(:mac)
 
-platform :ios do
-  desc "Description of what the lane does"
-  lane :custom_lane do
-    # add actions here: https://docs.fastlane.tools/actions
+EXPORT_DIR = "Releases"
+
+def app_id
+  CredentialsManager::AppfileConfig.try_fetch_value(:app_identifier)
+end
+
+def app_path
+  "#{EXPORT_DIR}/Search Key.app"
+end
+
+def zip_path
+  "#{EXPORT_DIR}/Search Key.zip"
+end
+
+def version_number
+  get_version_number(target: "Search Key")
+end
+
+platform :mac do
+
+  lane :archive do
+    xcbuild(archive: true, scheme: 'keysearch')
+  end
+
+  lane :export_archive do
+    xcarchive(
+      export_archive: true,
+      export_path: EXPORT_DIR,
+      export_options_plist: {
+        destination: 'export',
+        method: 'developer-id',
+        signing_style: 'automatic',
+        team_id: CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
+      }
+    )
+  end
+
+  lane :notarize_app do
+    notarize(
+      package: app_path,
+      print_log: "true",
+      bundle_id: app_id,
+      asc_provider: CredentialsManager::AppfileConfig.try_fetch_value(:asc_provider)
+    )
+  end
+
+  lane :zip_app do
+    zip(
+      path: app_path,
+      output_path: zip_path,
+      verbose: false,
+      symlinks: true
+    )
+  end
+
+  desc "Build"
+  lane :build do
+    archive
+    export_archive
+    notarize_app
+    zip_app
+  end
+  
+  lane :bump_version do
+    increment_build_number
+    increment_version_number( bump_type: "minor" )
+    commit_version_bump(message: "#{version_number}")
+  end
+
+  desc "Upload"
+  lane :upload do
+    build_mac_app(scheme: "keysearch",
+      output_directory: "Releases"
+    )
   end
 end
