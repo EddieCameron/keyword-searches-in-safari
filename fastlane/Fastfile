@@ -104,8 +104,16 @@ platform :mac do
   end
 
   lane :uploadtoappstore do
-    upload_to_app_store(
-
+    xcarchive(
+      export_archive: true,
+      archive_path: archive_path,
+      export_path: BUILD_DIR,
+      export_options_plist: {
+        destination: 'upload',
+        method: 'app-store',
+        signing_style: 'automatic',
+        team_id: CredentialsManager::AppfileConfig.try_fetch_value(:team_id)
+      }
     )
   end
 
@@ -115,5 +123,6 @@ platform :mac do
     build
     push_to_git_remote
     creategithubrelease
+    uploadtoappstore
   end
 end
