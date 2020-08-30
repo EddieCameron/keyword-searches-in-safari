@@ -18,7 +18,7 @@ default_platform(:mac)
 BUILD_DIR = "builds"
 
 def archive_path
-  "#{BUILD_DIR}/keysearch.archive"
+  "#{BUILD_DIR}/keysearch.xcarchive"
 end
 
 def app_id
