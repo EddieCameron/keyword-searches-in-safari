@@ -46,11 +46,11 @@ Build
 fastlane mac bump_version
 ```
 
-### mac upload
+### mac release
 ```
-fastlane mac upload
+fastlane mac release
 ```
-Upload
+
 
 ----
 
