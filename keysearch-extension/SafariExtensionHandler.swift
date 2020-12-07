@@ -60,8 +60,8 @@ class SafariExtensionHandler: SFSafariExtensionHandler {
                 if query.starts(with: queryStart) {
                     // matched a keyword
                     let cleanQuery = query.dropFirst(queryStart.count)
-                    let replacedUrlString = keyword.url.replacingOccurrences(of: "{search}", with: cleanQuery)
-                    if let urlEncoded = replacedUrlString.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed), let searchUrl = URL( string: urlEncoded ) {
+                    if let urlEncodedQuery = cleanQuery.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+                       , let searchUrl = URL( string: keyword.url.replacingOccurrences(of: "{search}", with: urlEncodedQuery) ) {
                         page.getContainingTab{ tab in
                             tab.navigate(to: searchUrl)
                         }
