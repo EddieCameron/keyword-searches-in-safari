@@ -28,3 +28,4 @@ keysearch.xcodeproj/project.xcworkspace
 report.xml
 .env
 builds
+.env.default

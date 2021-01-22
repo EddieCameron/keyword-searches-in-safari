@@ -64,6 +64,7 @@ platform :mac do
     notarize(
       package: app_path,
       print_log: "true",
+      verbose: "true",
       bundle_id: app_id,
       asc_provider: ENV['ASC_PROVIDER']
     )
@@ -86,9 +87,9 @@ platform :mac do
     zip_app
   end
   
-  lane :bump_version do
+  lane :bump_version do |options|
     increment_build_number
-    increment_version_number( bump_type: "minor" )
+    increment_version_number( bump_type: options[:bumptype] )
     commit_version_bump(message: "#{version_number}")
   end
 
@@ -117,9 +118,19 @@ platform :mac do
     )
   end
 
-  lane :release do
+  lane :release do |options|
     ensure_git_status_clean
-    bump_version
+
+    if options[:bumpminor] 
+      bump_version(
+        bumptype: "minor"
+      )
+    else
+      bump_version(
+        bumptype: "patch"
+      )
+    end
+
     build
     push_to_git_remote
     creategithubrelease
