@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>
-	<string>keysearch</string>
+	<string>Search Key</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -39,7 +39,7 @@
 			<key>Image</key>
 			<string>ToolbarItemIcon.png</string>
 			<key>Label</key>
-			<string>Your Button</string>
+			<string>Search Key</string>
 		</dict>
 		<key>SFSafariWebsiteAccess</key>
 		<dict>
